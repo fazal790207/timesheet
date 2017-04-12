@@ -9,7 +9,7 @@
 		</div>
 		<div class="callout">
 			<div class="small-12 columns">
-				<button class="button small float-right" onclick="location.href=''">View Full Month</button>
+				<button class="button small float-right" onclick="location.href='<?php echo base_url();?>'">View Full Month</button>
 			</div>
 			<table width="100%">
 				<thead>
