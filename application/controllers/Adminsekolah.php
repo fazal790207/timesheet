@@ -277,4 +277,72 @@ class Adminsekolah extends CI_Controller {
 
 	}
 
+	public function manage_subject(){
+
+		$data["menu_user"] = $this->menu;
+		$data["submenu"] = $this->submenu;
+
+		$data["page"] = "Subject";
+		$data["action"] = "";
+
+		$data["module"] = "sysadmin";
+
+		$data["info_organization"] = $this->nama_organisasi;
+
+		$data["subject_list"] = $this->subject_model->allSubject();
+
+		$this->load->view("mainpage/header_view");
+		$this->load->view("mainpage/canvas_side_start");
+		// tempat sidebar
+		$this->load->view("mainpage/sidebar_view", $data);
+		$this->load->view("mainpage/canvas_main_start");
+		// top bar
+		$this->load->view("mainpage/topbar_view");
+		$this->load->view("subject/list_subject_view", $data);
+		// main
+		$this->load->view("mainpage/canvas_main_end");
+		$this->load->view("mainpage/canvas_side_end");
+		$this->load->view("mainpage/footer_view");
+
+	}
+
+	public function new_subject(){
+
+		$data["menu_user"] = $this->menu;
+		$data["submenu"] = $this->submenu;
+
+		$data["page"] = "Subject";
+		$data["action"] = "New";
+
+		$data["module"] = "sysadmin";
+
+		$data["info_organization"] = $this->nama_organisasi;
+
+		$data["all_level"] = $this->sysadmin_model->allLevel($_SESSION['organization_id']);
+
+		$this->load->view("mainpage/header_view");
+		$this->load->view("mainpage/canvas_side_start");
+		// tempat sidebar
+		$this->load->view("mainpage/sidebar_view", $data);
+		$this->load->view("mainpage/canvas_main_start");
+		// top bar
+		$this->load->view("mainpage/topbar_view");
+		$this->load->view("subject/new_subject_view", $data);
+		// main
+		$this->load->view("mainpage/canvas_main_end");
+		$this->load->view("mainpage/canvas_side_end");
+		$this->load->view("mainpage/footer_view");
+
+	}
+
+	public function page_addnewsubject(){
+
+		$query = $this->sysadmin_model->new_subject(0);
+
+		if($query==1){
+			redirect("sysadmin/manage_subject");
+		}
+
+	}
+
 }
