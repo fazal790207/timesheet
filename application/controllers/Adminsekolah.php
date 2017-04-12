@@ -14,6 +14,7 @@ class Adminsekolah extends CI_Controller {
 		$this->load->model("adminsekolah_model");
 		$this->load->model("student_model");
 		$this->load->model("class_model");
+		$this->load->model("subject_model");
 		// $this->load->model("calendar_model");
 
 		if(!isset($_SESSION['login'])){
