@@ -8,6 +8,9 @@
 			</div>
 		</div>
 		<div class="callout">
+			<div class="small-12 columns">
+				<button class="button small float-right">View Full Month</button>
+			</div>
 			<table width="100%">
 				<thead>
 					<tr>
@@ -25,7 +28,7 @@
 							<td><?php echo $cls->desc_level;?></td>
 							<td><?php echo $cls->desc_class;?></td>
 							<td><?php echo $jumlah_murid->jumlah_murid($cls->level,$cls->class);?></td>
-							<td><a href="<?php echo base_url();?>teacher/view_attendance/<?php echo $cls->level;?>/<?php echo $cls->class;?>"> Attendance</a></td>
+							<td width="10"><a href="<?php echo base_url();?>teacher/view_attendance/<?php echo $cls->level;?>/<?php echo $cls->class;?>" class="button small">Attendance</a></td>
 						</tr>
 					<?php endforeach;?>
 				</tbody>

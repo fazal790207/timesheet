@@ -341,7 +341,7 @@ class Adminsekolah extends CI_Controller {
 		$query = $this->sysadmin_model->new_subject(0);
 
 		if($query==1){
-			redirect("sysadmin/manage_subject");
+			redirect("adminsekolah/manage_subject");
 		}
 
 	}

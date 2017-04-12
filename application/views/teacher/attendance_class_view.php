@@ -1,3 +1,4 @@
+<!-- <script src="<?php echo base_url();?>js/vendor/attendance.js"></script> -->
 <div class="row">
 	<div class="small-12 columns">
 		<div class="title-bar">
@@ -22,11 +23,16 @@
 				<tbody>
 					<?php $bil = 0; foreach($senarai_untuk_attendance as $senarai): $bil++;?>
 						<tr>
-							<td><?php echo $bil;?></td>
+							<td>
+								<?php echo $bil;?>
+								<input type="hidden" rowid="<?php echo $bil;?>">
+								<input type="hidden" class="attendance" rowid="<?php echo $bil;?>">
+								
+							</td>
 							<td><?php echo $senarai->studName;?></td>
 							<td><?php echo $senarai->studID;?></td>
 							<td valign="middle">
-								<select name="slxAttend[]" id="">
+								<select name="slxAttend[]" id="slxAttend">
 									<option value="1">Attend</option>
 									<option value="2">Absent</option>
 									<option value="3">Reason</option>
