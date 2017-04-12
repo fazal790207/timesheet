@@ -286,7 +286,7 @@ class Adminsekolah extends CI_Controller {
 		$data["page"] = "Subject";
 		$data["action"] = "";
 
-		$data["module"] = "sysadmin";
+		$data["module"] = "adminsekolah";
 
 		$data["info_organization"] = $this->nama_organisasi;
 
@@ -315,7 +315,7 @@ class Adminsekolah extends CI_Controller {
 		$data["page"] = "Subject";
 		$data["action"] = "New";
 
-		$data["module"] = "sysadmin";
+		$data["module"] = "adminsekolah";
 
 		$data["info_organization"] = $this->nama_organisasi;
 
